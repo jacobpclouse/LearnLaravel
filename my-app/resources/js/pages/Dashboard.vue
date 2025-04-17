@@ -3,7 +3,14 @@ import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
 import PlaceholderPattern from '../components/PlaceholderPattern.vue';
-import AppLogo from '@/components/AppLogo.vue';
+
+// my sample components -- fill with real data
+// create a new page and then have it hooked into authentication
+import SimpleCard from '@/components/SimpleCard.vue'
+import SimpleTable from '@/components/SimpleTable.vue';
+import SimpleStepper from '@/components/SimpleStepper.vue';
+import SimpleCalendar from '@/components/SimpleCalendar.vue';
+
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -21,17 +28,21 @@ const breadcrumbs: BreadcrumbItem[] = [
             <div class="grid auto-rows-min gap-4 md:grid-cols-3">
                 <div class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
                     <!-- <PlaceholderPattern /> -->
-                     <AppLogo />
+                    <SimpleCard />
                 </div>
                 <div class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                    <PlaceholderPattern />
+                    <!-- <PlaceholderPattern /> -->
+                     <SimpleStepper />
                 </div>
                 <div class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                    <PlaceholderPattern />
+                    <!-- <PlaceholderPattern /> -->
+                     <SimpleCalendar />
                 </div>
             </div>
             <div class="relative min-h-[100vh] flex-1 rounded-xl border border-sidebar-border/70 dark:border-sidebar-border md:min-h-min">
-                <PlaceholderPattern />
+                <!-- <PlaceholderPattern /> -->
+                 <!-- GPT MADE THE TABLE! -->
+                <SimpleTable />
             </div>
         </div>
     </AppLayout>
