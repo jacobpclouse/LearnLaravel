@@ -20,7 +20,7 @@ class YourEntryController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Entries/CreateEntry');
     }
 
     /**

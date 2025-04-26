@@ -19,6 +19,7 @@ const submit = () => {
         onSuccess: () => {
             form.reset();
             // Maybe show success message
+            // POST THE ROUTE AND DATA WITH IT, LOOKUP the DOCUMENTATION FOR THE INERTIA USEFORM
         },
     });
 };

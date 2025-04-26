@@ -3,21 +3,32 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\YourEntryController;
+use App\Models\YourEntry;
 
 // Route::get('/', function () {
-//     return Inertia::render('Welcome');
-// })->name('home');
+//     if (Auth::check()) {
+//         return redirect()->route('dashboard');
+//     }
+//     return redirect()->route('login');
+// });
 
 Route::get('/', function () {
-    if (Auth::check()) {
-        return redirect()->route('dashboard');
-    }
-    return redirect()->route('login');
-});
+    $all = YourEntry::all();
 
-Route::get('dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return Inertia::render('Dashboard',['all'=>$all]);// getting all my entries and passing all the entries to the dashboard as a prop
+})->middleware(['auth:web', 'verified'])->name('dashboard');
+
+
+
+
+
+
+
+// Route::get('dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 // ----- ADD MIDDLEWARE VAL ----
 // Route to display the form
