@@ -5,29 +5,12 @@ use Inertia\Inertia;
 use App\Http\Controllers\YourEntryController;
 use App\Models\YourEntry;
 
-// Route::get('/', function () {
-//     if (Auth::check()) {
-//         return redirect()->route('dashboard');
-//     }
-//     return redirect()->route('login');
-// });
-
+// Dashboard route
 Route::get('/', function () {
     $all = YourEntry::all();
 
     return Inertia::render('Dashboard',['all'=>$all]);// getting all my entries and passing all the entries to the dashboard as a prop
 })->middleware(['auth:web', 'verified'])->name('dashboard');
-
-
-
-
-
-
-
-// Route::get('dashboard', function () {
-//     return Inertia::render('Dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 
 
 // ----- ADD MIDDLEWARE VAL ----
@@ -38,6 +21,15 @@ Route::get('/entries/create', function () {
 
 // Route to handle the form submission
 Route::post('/entries', [YourEntryController::class, 'store'])->name('entries.store');
+
+
+
+// Test entries -- https://laravel.com/docs/12.x/routing
+Route::get('/greeting', function () {
+
+    return 'Hello World';
+
+});
 
 
 require __DIR__.'/settings.php';
