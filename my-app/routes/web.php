@@ -35,6 +35,10 @@ Route::get('/entries/{entry}/edit', [YourEntryController::class, 'edit'])->name(
 Route::put('/entries/{entry}', [YourEntryController::class, 'update'])->name('entries.update');
 
 
+// deleting:
+Route::delete('/entries/{entry}', [YourEntryController::class, 'destroy'])->name('entries.destroy');
+
+
 
 // Test entries -- https://laravel.com/docs/12.x/routing
 Route::get('/greeting', function () {

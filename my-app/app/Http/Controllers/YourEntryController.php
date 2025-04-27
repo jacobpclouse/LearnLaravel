@@ -92,8 +92,11 @@ class YourEntryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    // public function destroy(string $id)
+    public function destroy(YourEntry $entry)
     {
-        //
+        $entry->delete();
+        
+        return redirect()->route('entries.index')->with('message', 'Entry deleted successfully!');
     }
 }
