@@ -15,12 +15,6 @@ defineProps({
     entries: Array,
 });
 
-// defineProps({
-//   entries: {
-//     type: Array,
-//     default: () => []
-//   }
-// });
 </script>
 
 <template>

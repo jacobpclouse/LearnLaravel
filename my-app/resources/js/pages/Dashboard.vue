@@ -68,9 +68,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                  <!-- GPT MADE THE TABLE! -->
                 <!-- <SimpleTable /> -->
                 <!-- REPLACE THE SIMPLETABLE WITH DATA-->
-                <!-- <DashboardTable/> -->
-                <DashboardTable :entriesAll="entries" />
-                <!-- <DashboardTable all="entries" /> -->
+                <DashboardTable :entries="entries" />
             </div>
         </div>
     </AppLayout>

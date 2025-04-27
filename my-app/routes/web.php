@@ -10,7 +10,7 @@ Route::get('/', function () {
     $entriesAll = YourEntry::all();
     // $all = YourEntry::all();
 
-    return Inertia::render('Dashboard',['entriesAll'=>$entriesAll]);// getting all my entries and passing all the entries to the dashboard as a prop
+    return Inertia::render('Dashboard',['entries'=>$entriesAll]);// getting all my entries and passing all the entries to the dashboard as a prop
 })->middleware(['auth:web', 'verified'])->name('dashboard');
 
 
