@@ -69,7 +69,8 @@ const breadcrumbs: BreadcrumbItem[] = [
                 <!-- <SimpleTable /> -->
                 <!-- REPLACE THE SIMPLETABLE WITH DATA-->
                 <!-- <DashboardTable/> -->
-                <DashboardTable entries="entries" />
+                <DashboardTable :entriesAll="entries" />
+                <!-- <DashboardTable all="entries" /> -->
             </div>
         </div>
     </AppLayout>

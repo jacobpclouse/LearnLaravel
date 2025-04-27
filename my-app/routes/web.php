@@ -7,9 +7,10 @@ use App\Models\YourEntry;
 
 // Dashboard route
 Route::get('/', function () {
-    $all = YourEntry::all();
+    $entriesAll = YourEntry::all();
+    // $all = YourEntry::all();
 
-    return Inertia::render('Dashboard',['all'=>$all]);// getting all my entries and passing all the entries to the dashboard as a prop
+    return Inertia::render('Dashboard',['entriesAll'=>$entriesAll]);// getting all my entries and passing all the entries to the dashboard as a prop
 })->middleware(['auth:web', 'verified'])->name('dashboard');
 
 

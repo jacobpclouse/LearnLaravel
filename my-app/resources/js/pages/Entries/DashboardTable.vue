@@ -8,14 +8,19 @@ import {
   TableRow,
 } from '@/components/ui/table' // adjust the path if needed
 import AppLayout from '@/layouts/AppLayout.vue';
+import { Link, router } from '@inertiajs/vue3';
 
-
+// Entries are passed as props from the controller
 defineProps({
-  entries: {
-    type: Array,
-    default: () => []
-  }
+    entries: Array,
 });
+
+// defineProps({
+//   entries: {
+//     type: Array,
+//     default: () => []
+//   }
+// });
 </script>
 
 <template>
