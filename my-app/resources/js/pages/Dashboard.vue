@@ -11,6 +11,17 @@ import SimpleTable from '@/components/SimpleTable.vue';
 import SimpleStepper from '@/components/SimpleStepper.vue';
 import SimpleCalendar from '@/components/SimpleCalendar.vue';
 
+import DashboardTable from './Entries/DashboardTable.vue';
+
+
+// Define props to receive entries from controller
+defineProps({
+    entries: {
+        type: Array,
+        default: () => []
+    }
+});
+
 
 const breadcrumbs: BreadcrumbItem[] = [
 
@@ -55,7 +66,10 @@ const breadcrumbs: BreadcrumbItem[] = [
             <div class="relative min-h-[100vh] flex-1 rounded-xl border border-sidebar-border/70 dark:border-sidebar-border md:min-h-min">
                 <!-- <PlaceholderPattern /> -->
                  <!-- GPT MADE THE TABLE! -->
-                <SimpleTable />
+                <!-- <SimpleTable /> -->
+                <!-- REPLACE THE SIMPLETABLE WITH DATA-->
+                <!-- <DashboardTable/> -->
+                <DashboardTable entries="entries" />
             </div>
         </div>
     </AppLayout>
