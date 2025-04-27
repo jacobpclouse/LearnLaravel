@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\YourEntry; // Add this import statement
 
+use Inertia\Inertia; // Add this import
+
 class YourEntryController extends Controller
 {
     /**
@@ -12,7 +14,12 @@ class YourEntryController extends Controller
      */
     public function index()
     {
-        //
+        // get all the entries in the database
+        $entries = YourEntry::latest()->get();
+        
+        return Inertia::render('Entries/Index', [
+            'entries' => $entries
+        ]);
     }
 
     /**
@@ -55,17 +62,31 @@ class YourEntryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    // public function edit(string $id)
+    public function edit(YourEntry $entry)
     {
-        //
+        // edit specific entries
+        return Inertia::render('Entries/EditEntry', [
+            'entry' => $entry
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    // public function update(Request $request, string $id)
+    public function update(Request $request, YourEntry $entry)
     {
         //
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            // Other validation rules
+        ]);
+        
+        $entry->update($validated);
+        
+        return redirect()->route('entries.index')->with('message', 'Entry updated successfully!');
     }
 
     /**

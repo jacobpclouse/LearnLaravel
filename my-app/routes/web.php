@@ -23,6 +23,18 @@ Route::get('/entries/create', function () {
 Route::post('/entries', [YourEntryController::class, 'store'])->name('entries.store');
 
 
+// route to get/view all entries in the database
+Route::get('/entries', [YourEntryController::class, 'index'])->name('entries.index');
+
+
+// editing:
+// Route for displaying the edit form
+Route::get('/entries/{entry}/edit', [YourEntryController::class, 'edit'])->name('entries.edit');
+
+// Route for processing the update
+Route::put('/entries/{entry}', [YourEntryController::class, 'update'])->name('entries.update');
+
+
 
 // Test entries -- https://laravel.com/docs/12.x/routing
 Route::get('/greeting', function () {
