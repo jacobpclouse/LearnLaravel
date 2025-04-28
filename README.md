@@ -27,6 +27,13 @@ If **vendor/** directory does not exist, install backend dependencies:
 ```
 composer install
 ```
+(NOTE: When creating a new app, if you want to customize sail or the Dockerfile, you should use ```php artisan sail:publish``` to copy the **vendor/** directory into a new **docker/** directory. Then you can adjust the Dockerfile and add any custom setup like cert info, etc)
+
+### 🐳 Start Docker Containers
+Bring up the app using Laravel Sail:
+```
+./vendor/bin/sail up -d
+```
 
 ### 📦 Install Node.js Dependencies
 Install frontend dependencies:
@@ -39,11 +46,13 @@ Build frontend assets:
 ```
 (Use npm run build for production.)
 
+<!--
 ### 🐳 Start Docker Containers
 Bring up the app using Laravel Sail:
 ```
 ./vendor/bin/sail up -d
 ```
+-->
 
 ### 🔑 Generate Application Key
 Generate the app encryption key:
