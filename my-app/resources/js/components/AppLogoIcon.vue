@@ -23,7 +23,7 @@ defineProps<Props>();
     </svg> -->
     <div class="">
             <img 
-            src="jpc_black.svg"
+            src="/jpc_black.svg"
                 alt="my logo" />
         </div>
         <div class=""></div>
