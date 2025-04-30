@@ -73,3 +73,8 @@ http://localhost
 ```
 Your Laravel + Vue.js application should now be running!
 
+### If you have set this up before...
+You can use the following to quickly get up and running:
+```
+./vendor/bin/sail up -d && sail npm run dev
+```
