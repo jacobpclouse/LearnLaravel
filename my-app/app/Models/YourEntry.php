@@ -10,6 +10,10 @@ class YourEntry extends Model
     protected $fillable = [
         'title',
         'description',
-        // Other fields
+        // Other fields - migrated after
+        'requestor',
+        'assignee',
+        'tags',
+        'priority',
     ];
 }

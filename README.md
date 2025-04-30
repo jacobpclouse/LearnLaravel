@@ -7,6 +7,16 @@ Sail app - w/ Starter Kit
 - Tutorial :https://youtu.be/SqTdHCTWqks?t=778
 - Setup .env file: https://www.youtube.com/watch?v=Od5MYujmCMs
 
+## VS Code Extensions:
+- Laravel
+- Laravel Extra Intellisense
+- PHP Create Class
+- PHP Intelephense
+- shadcn/vue
+- Tailwind CSS Intellisense
+- Vue - Official
+- PHP Awesome Snippets
+
 ## How to Setup and Run:
 This guide explains how to set up and run the project locally using Docker, Laravel Sail, and WSL Ubuntu.
 

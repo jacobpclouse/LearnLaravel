@@ -12,6 +12,7 @@ const form = useForm({
     title: props.entry.title,
     description: props.entry.description,
     // Other fields
+    requestor: props.entry.requestor,
 });
 
 const submit = () => {
@@ -43,6 +44,17 @@ const submit = () => {
                                    type="text" 
                                    placeholder="Title">
                             <div v-if="form.errors.title" class="text-red-500 text-xs italic">{{ form.errors.title }}</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="requestor">
+                                Requestor
+                            </label>
+                            <input v-model="form.requestor"
+                                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                      id="requestor" 
+                                      placeholder="Requestor"></input>
+                            <div v-if="form.errors.requestor" class="text-red-500 text-xs italic">{{ form.errors.requestor }}</div>
                         </div>
                         
                         <div class="mb-6">

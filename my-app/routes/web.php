@@ -18,7 +18,10 @@ Route::get('/', function () {
 // Route to display the form
 Route::get('/entries/create', function () {
     return Inertia::render('Entries/CreateEntry');
-})->name('entries.create');
+})->middleware(['auth:web', 'verified'])->name('entries.create'); // added middleware value so non authed users cant add any
+
+
+// should i add auth validation for the following?
 
 // Route to handle the form submission
 Route::post('/entries', [YourEntryController::class, 'store'])->name('entries.store');

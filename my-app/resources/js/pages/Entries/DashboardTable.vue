@@ -22,6 +22,7 @@ defineProps({
     <TableHeader>
       <TableRow>
         <TableHead>Title</TableHead>
+        <TableHead>Requestor</TableHead>
         <TableHead>Description</TableHead>
         <TableHead>Id</TableHead>
       </TableRow>
@@ -30,6 +31,7 @@ defineProps({
       <!-- Fixed: use entry instead of entries in the loop -->
       <TableRow v-for="entry in entries" :key="entry.id">
         <TableCell>{{ entry.title }}</TableCell>
+        <TableCell>{{ entry.requestor }}</TableCell>
         <TableCell>{{ entry.description }}</TableCell>
         <TableCell>{{ entry.id }}</TableCell>
       </TableRow>

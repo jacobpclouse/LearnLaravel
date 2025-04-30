@@ -8,10 +8,22 @@ import AppLayout from '@/layouts/AppLayout.vue';
 // import { type BreadcrumbItem } from '@/types';
 import { Head, useForm } from '@inertiajs/vue3';
 
+
+
+// get and use the logged in user's username for the requestor
+import { type SharedData, type User } from '@/types';
+import { usePage } from '@inertiajs/vue3';
+const page = usePage<SharedData>();
+const user = page.props.auth.user as User;
+
+// pulled from the NavUser.vue page mainly with some reference from UserInfo.vue
+
+
 const form = useForm({
     title: '',
     description: '',
     // Other fields
+    requestor: user.name,
 });
 
 const submit = () => {
@@ -48,6 +60,18 @@ const submit = () => {
                                    placeholder="Title">
                             <div v-if="form.errors.title" class="text-red-500 text-xs italic">{{ form.errors.title }}</div>
                         </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="requestor">
+                                Requestor
+                            </label>
+                            <input v-model="form.requestor"
+                                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                      id="requestor" 
+                                      placeholder="Requestor"></input>
+                            <div v-if="form.errors.requestor" class="text-red-500 text-xs italic">{{ form.errors.requestor }}</div>
+                        </div>
+
                         
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="description">

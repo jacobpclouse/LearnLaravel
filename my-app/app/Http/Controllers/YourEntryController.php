@@ -40,6 +40,10 @@ class YourEntryController extends Controller
              'title' => 'required|string|max:255',
              'description' => 'nullable|string',
              // Other validation rules
+             'requestor' => 'nullable|string',
+             'assignee' => 'nullable|string',
+             'tags' => 'nullable|string',
+             'priority' => 'nullable|integer',
          ]);
          
          $entry = YourEntry::create($validated); // this is saying that it can't find the controller?
@@ -82,6 +86,10 @@ class YourEntryController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             // Other validation rules
+            'requestor' => 'nullable|string',
+            'assignee' => 'nullable|string',
+            'tags' => 'nullable|string',
+            'priority' => 'nullable|integer',
         ]);
         
         $entry->update($validated);
